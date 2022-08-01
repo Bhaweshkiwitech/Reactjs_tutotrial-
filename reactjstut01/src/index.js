@@ -2,16 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Basicform from './Basicform';
+
 import reportWebVitals from './reportWebVitals';
-import Profile from './Profile';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App />
-    <Basicform/> */}
-    <Profile/>
+     <App />
+   
 
   </React.StrictMode>
 );
