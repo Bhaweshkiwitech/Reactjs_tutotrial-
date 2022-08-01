@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import Basicform from './Basicform';
 import reportWebVitals from './reportWebVitals';
+import Profile from './Profile';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-    <Basicform/>
+    {/* <App />
+    <Basicform/> */}
+    <Profile/>
+
   </React.StrictMode>
 );
 
