@@ -1,14 +1,22 @@
-import React, { useEffect, useState } from "react"; //importing hooks from React
+import React, { useEffect,useState} from "react";
 
 function App() {
-  const [count, setCount] = useState(0); // defining useState hooks
+  const[data,setData]=useState(10);
+  const[count,setCount]=useState(100);
   useEffect(() => {
-    console.log("useEffect"); // defining hooks also we can define more than one hook in function based
-  });
+    console.log("called with data state");
+  },[data]);
+  useEffect(() => {
+    
+    console.log("called with data state");
+  },[count]);
   return (
-    <div>
-      <h1>useEffect Hooks {count}</h1>
-      <button onClick={() => setCount(count + 1)}>Update</button>
+    <div className="App">
+      <h1>useEffect with specific State and props</h1>
+      <h1>data:{data}</h1>
+      <h1>count:{count}</h1>
+      <button onClick={()=>setCount(count+1)}>Update Count</button>
+      <button onClick={()=>setData(data+1)}>Update Data</button>
     </div>
   );
 }
