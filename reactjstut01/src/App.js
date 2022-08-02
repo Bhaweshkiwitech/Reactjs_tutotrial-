@@ -1,11 +1,16 @@
-import React,{useState} from 'react' // we are importing hook useState
+import React, { useEffect, useState } from "react"; //importing hooks from React
 
-export default function App() {
-  const[data,setData]=useState('Bhawesh')
+function App() {
+  const [count, setCount] = useState(0); // defining useState hooks
+  useEffect(() => {
+    console.log("useEffect"); // defining hooks also we can define more than one hook in function based
+  });
   return (
     <div>
-      <h1>Hello! {data}</h1>
-      <button onClick={()=>{setData('devesh')}}>update</button>
+      <h1>useEffect Hooks {count}</h1>
+      <button onClick={() => setCount(count + 1)}>Update</button>
     </div>
-  )
+  );
 }
+
+export default App;
