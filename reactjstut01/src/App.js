@@ -4,20 +4,24 @@ class App extends Component {
   constructor(){
     super();
     this.state={
-      name:'bhawesh'
+      count:0
     }
-    console.log('constructor')
+   
+    
   }
 
-  componentDidMount(){
-    console.log("componentDidMount")
+  componentDidUpdate(prevProps,preState,snapshot){
+          console.log('componentDidUpdate',preState.count,this.state.count);
+          if(preState.count===this.state.count){
+            alert('data isa already same')
+          }
   }
   render() {
-    console.log('render');
+    // console.log('render');
     return (
       <div>
-      <h1>Component Did Mount {this.state.name}</h1>
-      <button onClick={()=> this.setState({name:'Devesh'})}>updatename</button>
+      <h1>Component Did Update{this.state.count}</h1>
+      <button onClick={()=> {this.setState({count:1})}}>updatename</button>
       </div>
     );
   }
