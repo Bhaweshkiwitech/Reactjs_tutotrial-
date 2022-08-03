@@ -1,6 +1,6 @@
 import React from "react";
 
-
+import Table from 'react-bootstrap/Table';
 function App() {
   // const students = [
   //   "Bhawesh",
@@ -16,27 +16,27 @@ function App() {
     { name: "piyush sir", contact: 220, email: "pi232@gmail.com" },
     { name: "akhlaq sir", contact: 212, email: "akp31232@gmail.com" },
   ];
-  //map looping
-
-  // students.map((item)=>{
-  //   console.log('my name is ', item);
-  // })
-
-  // for(let i=0;i<=students.length;i++){
-  //   console.log('for loop', students[i]);
-  // }
+  
   return (
     <div className="App">
       <h1>Handle Array with List</h1>
-      <table border={12}>
+      <Table striped bordered hover>
+      <tr>
+          
+          <th> Name</th>
+          <th> Contact</th>
+          <th>Email</th>
+        </tr>
+
         {/* use map in reactjs instead of for loop, while loop in reactjs*/}
         {students.map((data) => (
-          <tr border={12}>
-            <td border={12}>{data.name}</td>
-            <td border={12}>{data.email}</td>
+          <tr>
+            <td>{data.name}</td>
+            <td>{data.contact}</td>
+            <td>{data.email}</td>
           </tr>
         ))}
-      </table>
+        </Table>
     </div>
   );
 }
