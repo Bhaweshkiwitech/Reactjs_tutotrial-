@@ -1,22 +1,17 @@
-import React, { useEffect,useState} from "react";
-import User from './User'
+import React from 'react'
+import './style.css'
+import style from './custom.module.css'
 function App() {
-  const[data,setData]=useState(10);
-  const[count,setCount]=useState(100);
-  useEffect(() => {
-    console.log("called with data state");
-  },[data]);
-  useEffect(() => {
-    
-    console.log("called with data state");
-  },[count]);
   return (
-    <div className="App">
-       <User count={count} data={data}/>
-      <button onClick={()=>setCount(count+1)}>Update Count</button>
-      <button onClick={()=>setData(data+1)}>Update Data</button>
-    </div>
-  );
+    <div className='App'>
+    {/* className Styling */}
+      <h1 className='primary'>hello Bhawesh</h1> 
+      {/* inline styling we use double curly brackets first for styling second for object */}
+      <h1 style={{color:'red',backgroundColor:'blue'}}>hello Bhawesh</h1> 
+      {/* we are using modular css here  */}
+      <h1 className={style.success}>hello Bhawesh</h1> 
+      </div>
+  )
 }
 
-export default App;
+export default App
