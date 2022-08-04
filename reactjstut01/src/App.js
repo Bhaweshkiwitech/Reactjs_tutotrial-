@@ -1,45 +1,84 @@
-import React from "react";
-
-import Table from 'react-bootstrap/Table';
+import './App.css';
+import React from 'react'
+import { Table } from 'react-bootstrap'
 function App() {
-
-
-  const students = [
-    { id:1,name: "Bhawesh", contact: 888, email: "bp@gmail.com" },
-    {  id:2,name: "Devesh", contact: 11, email: "dp22@gmail.com" },
-    { id:3, name: "piyush sir", contact: 220, email: "pi232@gmail.com" },
-    {  id:4,name: "akhlaq sir", contact: 212, email: "akp31232@gmail.com" },
-  ];
-  
+  const users = [
+    {
+      name: 'Bhawesh', email: 'bp@test.com', address: [
+        { hm: '101', city: 'Noida', country: 'India' },
+        { hm: '10', city: 'Gurgaon', country: 'India' },
+        { hm: '23', city: 'Noida', country: 'India' },
+        { hm: '45', city: 'Delhi', country: 'India' },
+      ]
+    },
+    {
+      name: 'piyush sir', email: 'piyush@test.com', address: [
+        { hm: '101', city: 'Noida', country: 'India' },
+        { hm: '10', city: 'Gurgaon', country: 'India' },
+        { hm: '23', city: 'Noida', country: 'India' },
+        { hm: '45', city: 'Delhi', country: 'India' },
+      ]
+    },
+    {
+      name: 'Devesh', email: 'devesh@test.com', address: [
+        { hm: '101', city: 'Noida', country: 'India' },
+        { hm: '10', city: 'Gurgaon', country: 'India' },
+        { hm: '23', city: 'Noida', country: 'India' },
+        { hm: '45', city: 'Delhi', country: 'India' },
+      ]
+    },
+    {
+      name: 'Akhlaq sir', email: 'Ak@test.com', address: [
+        { hm: '101', city: 'Noida', country: 'India' },
+        { hm: '10', city: 'Gurgaon', country: 'India' },
+        { hm: '23', city: 'Noida', country: 'India' },
+        { hm: '45', city: 'Delhi', country: 'India' },
+      ]
+    },
+  ]
   return (
-        <Table striped bordered hover variant="dark">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Contact</th>
-            </tr>
-          </thead>
-          <tbody>
+    <div className="App">
+      <h1>List with Nested Array</h1>
+      <Table variant="dark"  >
+        <tbody>
+          <tr>
+          <td>S.N</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Address</td>
+          </tr>
           {
-            students.map((item)=>
-            <tr>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.email}</td>
-              <td>{item.contact}</td>
-            </tr>
-            
-            )
+            users.map((item,i)=>
+            <tr key={i}>
+               <td>{i+1}</td>
+            <td>{item.name}</td>
+          <td>{item.email}</td>
+            <td>
+              {/*  */}
+              <Table variant="dark"  >
+        <tbody>
+              {
+                item.address.map((data)=>
+
+                <tr>
+                  <td>{data.hm}</td>
+                  <td>{data.city}</td>
+                  <td>{data.country}</td>
+                </tr>
+                )
+              }
+              </tbody>
+              </Table>
+              {/*  */}
+            </td>
+          </tr>
+          )
           }
-           
-      
-          </tbody>
-        </Table>
-   
-   
-   );
-  }
+        </tbody>
+      </Table>
+
+    </div>
+  );
+}
 
 export default App;
