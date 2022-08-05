@@ -1,8 +1,8 @@
 import React from 'react'
 import User from './User'
 function App() {
-  function parentAlert(){
-    alert('Hello Handsome');
+  function parentAlert(data){
+    alert(data.name);
   }
   return (
     <>
