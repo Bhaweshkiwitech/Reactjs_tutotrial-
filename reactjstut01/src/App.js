@@ -1,19 +1,15 @@
-import React,{useRef} from 'react'
-import User from './User'
+import React,{useState} from 'react'
 
-export default function App() {
-let inputRef=useRef(null)
-function updateInput(){
-  inputRef.current.value = '1000'
-  inputRef.current.style.color='red'
-  inputRef.current.focus()
-}
+ function App() {
+  let [val,setVal]=useState('Enter your name Bro')
+  let [item,setItem]=useState('Enter your password Bro')
   return (
- <>
-  <h1> forwardRef in ReactJs</h1>
-  <User ref={inputRef}/>
-  <button onClick={updateInput}>Click Me Men</button>
-
- </>
+    <>
+   <h1>Controlled Component</h1>
+   <input type="text" value={val} onChange={(e)=>setVal(e.target.value)}/>
+   <input type="text" value={item} onChange={(e)=>setItem(e.target.value)}/>
+   <h3>Value :{val}</h3>
+    </>
   )
 }
+export default App;
