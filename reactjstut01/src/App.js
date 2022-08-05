@@ -1,17 +1,19 @@
 import React,{useRef} from 'react'
-
+import User from './User'
 
 export default function App() {
-  let inputRef=useRef(null)
-  function handleInput(){
-    inputRef.current.value = 100
-    console.log('function call');
-  }
+let inputRef=useRef(null)
+function updateInput(){
+  inputRef.current.value = '1000'
+  inputRef.current.style.color='red'
+  inputRef.current.focus()
+}
   return (
-<>
-  <h1>useRef in Reactjs</h1>
-  <input type="text" ref={inputRef}/>
-  <button onClick={handleInput}>Click me</button>
+ <>
+  <h1> forwardRef in ReactJs</h1>
+  <User ref={inputRef}/>
+  <button onClick={updateInput}>Click Me Men</button>
 
-</>  )
+ </>
+  )
 }
